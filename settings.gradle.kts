@@ -25,6 +25,15 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        // Add the JogAmp repository here
+        maven {
+            url = uri("https://jogamp.org/deployment/maven/") // Or the correct URL if different
+            mavenContent {
+                // Be specific if you only want jogamp artifacts from here
+                includeGroup("org.jogamp.gluegen")
+                includeGroup("org.jogamp.jogl")
+            }
+        }
     }
 }
 
